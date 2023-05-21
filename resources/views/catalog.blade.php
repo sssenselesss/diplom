@@ -102,180 +102,33 @@
     <div class="categories-modal">
             <div class="categories-modal__wrapper">
                 <form action="" class="catalog-categories__form">
+                    @csrf
+                    @foreach($mainCat as $main)
+                        <h5>{{$main->name}}</h5>
+                        @foreach($subCat as $sub)
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Услуги пешего курьера
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги курьера на легковом авто
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Перевозка вещей, переезды
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Пассажирские перевозки
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Вывоз мусора
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Междугородные перевозкиsdf sd fsdf sdf sdf sdbf sdbu fbsdhb fuhbsuhdbfjfdng idfngidfn
-                            hgbndfg dfi gnfdijng ijdfgij dnfgnini
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Эвакуаторы
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги манипулятора
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Услуги пешего курьера
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги курьера на легковом авто
-                        </label>
-                    </div>
+                            @if($main->id === $sub->main_category)
 
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Перевозка вещей, переезды
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Пассажирские перевозки
-                        </label>
-                    </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="categories[]" value="{{$sub->id}}"
+                                           id="{{$sub->name}}"
+                                           @foreach($categories1 as $category)
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Вывоз мусора
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Междугородные перевозкиsdf sd fsdf sdf sdf sdbf sdbu fbsdhb fuhbsuhdbfjfdng idfngidfn
-                            hgbndfg dfi gnfdijng ijdfgij dnfgnini
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Эвакуаторы
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги манипулятора
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Услуги пешего курьера
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги курьера на легковом авто
-                        </label>
-                    </div>
+                                               @if($category == $sub->id)
+                                                   checked
+                                        @endif
+                                        @endforeach
+                                    >
+                                    <label class="form-check-label" for="{{$sub->name}}">
+                                        {{$sub->name}}
+                                    </label>
+                                </div>
+                            @endif
+                        @endforeach
+                    @endforeach
 
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Перевозка вещей, переезды
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Пассажирские перевозки
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Вывоз мусора
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Междугородные перевозкиsdf sd fsdf sdf sdf sdbf sdbu fbsdhb fuhbsuhdbfjfdng idfngidfn
-                            hgbndfg dfi gnfdijng ijdfgij dnfgnini
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Эвакуаторы
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги манипулятора
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Услуги пешего курьера
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label" for="flexCheckChecked">
-                            Услуги курьера на легковом авто
-                        </label>
-                    </div>
 
                     <button class="show">Показать</button>
 

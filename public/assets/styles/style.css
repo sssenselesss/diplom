@@ -120,7 +120,7 @@ ul {
     color: white;
     border-radius: 10px;
     display: none;
-    z-index: 20;
+    z-index: 40;
 }
 
 .burger-menu.active {
@@ -1712,7 +1712,7 @@ min-height: 30vh;
 .categories-modal__wrapper {
     padding: 20px;
     position: absolute;
-    width: 360px;
+    width: 340px;
     height: 100vh;
     background-color: white;
     right: 0;
@@ -1852,6 +1852,9 @@ min-height: 30vh;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 360px;
+    width: 100%;
+    padding: 16px;
 }
 
 .login-field {
@@ -1864,7 +1867,7 @@ min-height: 30vh;
 
 .login-field input {
 
-    width: 360px;
+
 
     height: 40px;
     border-radius: 30px;

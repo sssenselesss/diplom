@@ -242,6 +242,8 @@ const modalRegistrtion = () => {
 }
 
 const alertTimeout = () =>{
+    const alert = document.querySelector('.alert');
+    if(!alert) return false
     setTimeout(function(){
         document.getElementById('alert').style.display = 'none';
     }, 3000);

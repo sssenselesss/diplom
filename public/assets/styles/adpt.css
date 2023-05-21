@@ -189,6 +189,16 @@
         display:
             block;
     }
+    .rightSide-image{
+
+        display: none;
+    }
+    .login-modal__wrapper{
+        padding: 20px 0px;
+    }
+    .modal-logo{
+        display: none;
+    }
 
     .banner {
 
