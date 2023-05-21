@@ -11,7 +11,7 @@
             <p>Поможем найти надёжного исполнителя для любых задач</p>
         </div>
     </div>
-as
+
     <div class="infograph">
         <div class="wrapper">
             <div class="graph-item">
