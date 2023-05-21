@@ -121,6 +121,7 @@ const ModalCategory = () => {
 const attachFile = () => {
 
     const parent = document.querySelector('.attach')
+    console.log(parent)
     if (!parent) return false
 
     const attachDiv = document.querySelector('.file-attach');
@@ -135,9 +136,11 @@ const currentLengthDiscription = () => {
     const parent = document.querySelector('.addArticle');
     if (!parent) return false
 
-    const textArea = parent.querySelector('.addArticle__text');
-    const currentLength = parent.querySelector('.currentLengt');
 
+    const textArea = parent.querySelector('.addArticle__text');
+    if(!textArea) return false
+
+    const currentLength = parent.querySelector('.currentLengt');
 
     textArea.addEventListener('keydown', (e) => {
         let a = e.currentTarget.value.length
@@ -150,6 +153,8 @@ const currentLengthOther = () => {
     if (!parent) return false
 
     const textArea = parent.querySelector('.Othertext');
+    if(!textArea) return false
+
     const currentLength = parent.querySelector('.otherLength');
 
 

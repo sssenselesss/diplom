@@ -6,7 +6,7 @@
         <div class="wrapper">
             <div class="profile-header">
                 <div class="profile-image">
-                    @if($user->iamge === null )
+                    @if($user->image === null )
                         <img src="{{asset('public/assets/avatars/default.png')}}" alt="123">
                     @else
                         <img src="{{$user->getImageUrlAttribute()}}" alt="">

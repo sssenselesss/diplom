@@ -33,9 +33,12 @@ class IndexController extends Controller
 
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();
-        $tasks = Task::query()->where('status','=','new')->paginate(10);
+        $tasks = Task::query()->where('status','=','new')
+            ->orderByDesc('id')->paginate(10);
+        $categories1 = [];
         return view('catalog', ['tasks' => $tasks,
-            'mainCat' => $mainCat, 'subCat' => $subCat,'total'=>$total]);
+            'mainCat' => $mainCat, 'subCat' => $subCat,'total'=>$total,
+            'categories1'=>$categories1]);
     }
 
     public function catalogSearch(Request $request)
@@ -54,12 +57,12 @@ class IndexController extends Controller
                 $tasks =  Task::query()->where('title', 'LIKE', "%${search}%");
             }
         }
-
+$categories1 =[];
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();
 
         return view('catalog', ['tasks' => $tasks->paginate(10)->withQueryString(), 'mainCat' => $mainCat,
-            'subCat' => $subCat,'total'=>$total]);
+            'subCat' => $subCat,'total'=>$total,'categories1'=>$categories1]);
     }
 
     public function catalogFilter(Request $request){
@@ -78,16 +81,11 @@ class IndexController extends Controller
 
             }
         }
-
-
-
-
+        $categories1 = $categories;
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();
-
-
         return view('catalog', ['tasks' => $tasks->paginate(10)->withQueryString(),
-            'mainCat'=>$mainCat,'subCat'=>$subCat,'total'=>$total]);
+            'mainCat'=>$mainCat,'subCat'=>$subCat,'total'=>$total,'categories1'=>$categories1]);
 
 
     }

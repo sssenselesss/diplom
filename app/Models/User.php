@@ -36,5 +36,9 @@ class User extends Authenticatable
         return asset('public'.Storage::url($this->image));
     }
 
+    public function feedback($id){
+        return count(Feedback::query()->where('executor_id',$id)->get());
+    }
+
 
 }
