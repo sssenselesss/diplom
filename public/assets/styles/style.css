@@ -496,7 +496,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 0px 16px;
+    padding: 0 16px;
 }
 
 .question-container {
@@ -558,7 +558,7 @@ footer {
 .single .wrapper {
     margin: 0 auto;
     max-width: 800px;
-    padding: 0px 16px;
+    padding: 0 16px;
 }
 
 .single .wrapper h2 {
@@ -584,7 +584,7 @@ footer {
     max-width: 800px;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding: 30px 0px;
+    padding: 30px 0;
 
     border-top: 1px solid #9f9f9f;
     border-bottom: 1px solid #9f9f9f;
@@ -753,7 +753,7 @@ footer {
 }
 
 .roleButton.active {
-    box-shadow: inset 0px 0px 33px rgba(0, 0, 0, 0.53);
+    box-shadow: inset 0 0 33px rgba(0, 0, 0, 0.53);
 }
 
 .order {
@@ -1068,7 +1068,7 @@ min-height: 30vh;
     display: flex;
     flex-direction: row;
     gap: 10px;
-    padding: 0px 16px;
+    padding: 0 16px;
 }
 
 .singleArticle-btns {
@@ -1076,7 +1076,7 @@ min-height: 30vh;
     max-width: 1600px;
     margin-top: 60px;
 
-    padding: 0px 16px;
+    padding: 0 16px;
 
     display: flex;
     align-items: center;
@@ -1106,14 +1106,14 @@ min-height: 30vh;
 .addArticle2 .wrapper {
     margin: 0 auto;
     max-width: 600px;
-    padding: 0px 16px;
+    padding: 0 16px;
 
 }
 
 .addOrder .wrapper {
     margin: 0 auto;
     max-width: 600px;
-    padding: 0px 16px;
+    padding: 0 16px;
 
 }
 
@@ -1336,7 +1336,7 @@ min-height: 30vh;
     max-width: 1150px;
     display: flex;
     flex-direction: column;
-    padding: 0px 16px;
+    padding: 0 16px;
 }
 
 .admin-select-bar {
@@ -1598,7 +1598,7 @@ min-height: 30vh;
     align-items: center;
 
     gap: 20px;
-    padding: 0px 20px;
+    padding: 0 20px;
 
 }
 
@@ -1842,7 +1842,7 @@ min-height: 30vh;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0px 30px 30px 0px;
+    border-radius: 0 30px 30px 0;
 }
 
 .login-leftSide {
@@ -2130,7 +2130,7 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     min-height: 20vh;
 
-    margin-top: 150px;
+    margin-top:150px;
     font-size: 24px;
     font-weight: 600;
     text-align: center;
