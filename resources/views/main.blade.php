@@ -15,24 +15,35 @@
     <div class="infograph">
         <div class="wrapper">
             <div class="graph-item">
-                <div class="circle"></div>
+                <div class="circle">
+                    <img src="{{asset('public/assets/staticImages/icons/services.png')}}" alt="">
+                </div>
                 <h3>Широкий выбор услуг</h3>
                 <span class="graph-content">Доступно более 30 подкатегорий для выбора</span>
             </div>
             <div class="graph-item">
-                <div class="circle"></div>
-                <h3>Широкий выбор услуг</h3>
-                <span class="graph-content">Доступно более 30 подкатегорий для выбора</span>
+                <div class="circle">
+                    <img src="{{asset('public/assets/staticImages/icons/time.png')}}" alt="">
+
+                </div>
+                <h3>Экономия времени</h3>
+                <span class="graph-content">На нашем сайте вы можете быстро найти нужного исполнителя для решения именно вашей задачи</span>
             </div>
             <div class="graph-item">
-                <div class="circle"></div>
-                <h3>Широкий выбор услуг</h3>
-                <span class="graph-content">Доступно более 30 подкатегорий для выбора</span>
+                <div class="circle">
+                    <img src="{{asset('public/assets/staticImages/icons/price.png')}}" alt="">
+
+                </div>
+                <h3>Выгодные цены на услуги</h3>
+                <span class="graph-content">У наших  исполнителей  нет дополнительных затрат, которые все сервисные компании включают в стоимость своих услуг.</span>
             </div>
             <div class="graph-item">
-                <div class="circle"></div>
-                <h3>Широкий выбор услуг</h3>
-                <span class="graph-content">Доступно более 30 подкатегорий для выбора</span>
+                <div class="circle">
+                    <img src="{{asset('public/assets/staticImages/icons/users.png')}}" alt="">
+
+                </div>
+                <h3>Надежные исполнители</h3>
+                <span class="graph-content">Все исполнители  проходят у нас процедуру верификации, мы проверяем отзывы о них, контролируем вместе с вами качество их работы</span>
             </div>
         </div>
     </div>

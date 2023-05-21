@@ -218,7 +218,15 @@ ul {
     height: 160px;
     border-radius: 50%;
     background-color: #ACCFB4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+.graph-item .circle img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 }
 
 .graph-item h3 {
@@ -1745,7 +1753,7 @@ min-height: 30vh;
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 20;
+    z-index: 40;
     padding: 16px;
 }
 
@@ -1780,7 +1788,7 @@ min-height: 30vh;
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 20;
+    z-index: 40;
     padding: 16px;
 
 }

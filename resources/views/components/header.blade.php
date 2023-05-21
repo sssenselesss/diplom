@@ -44,6 +44,7 @@
                 <div class="burger-buttons">
                     @guest()
                         <a class="openModal__burger">Войти</a>
+                        <a class="openModal__burger_reg">Регистрация</a>
                     @endguest
 
                     @auth()

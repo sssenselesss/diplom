@@ -9,6 +9,8 @@ const BurgerMenu = () => {
     burgerButton.addEventListener('click', () => {
         burgerMenu.classList.toggle('active');
     })
+    burgerMenu.addEventListener('click', (e)=>e.target === burgerMenu && close());
+
 }
 
 const Accordeon = () => {
@@ -212,7 +214,7 @@ const modalRegistrtion = () => {
     const modalLogin = document.querySelector('.login-modal');
 
     const showReg = modalLogin.querySelector('.regFromLogin');
-
+    const showModalBurger = document.querySelector('.openModal__burger_reg');
     const closeModal = modal.querySelector('.modal-close');
 
 
@@ -223,7 +225,11 @@ const modalRegistrtion = () => {
         show();
         modalLogin.classList.remove('active')
     });
+    showModalBurger.addEventListener('click',()=>{
+        show();
+        modalLogin.classList.remove('active')
 
+    })
 
     closeModal.addEventListener('click',close)
 
