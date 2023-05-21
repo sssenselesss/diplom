@@ -3,5 +3,5 @@
     RewriteEngine On
 
 
-    RewriteRule ^ public/index.php [L]
+    RewriteRule ^ index.php [L]
 
