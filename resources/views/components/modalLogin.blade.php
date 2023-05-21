@@ -27,7 +27,6 @@
 
                 <a href="{{route('resetPassword')}}" class="required-input">Восстановить пароль</a>
 
-                <div class="modal-signup__ref required-input">Нет аккаунта? - <u class="regFromLogin">Зарегистрируйтесь!</u> </div>
 
                 <button class="login-button">Войти</button>
             </form>
