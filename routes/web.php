@@ -56,6 +56,9 @@ Route::middleware(['authCustom'])->post('/becomeExecutor/',[\App\Http\Controller
 Route::middleware(['authCustom'])->get('/profile/edit/{user:id}',[\App\Http\Controllers\UserController::class,'editProfile'])->name('editProfile');
 Route::middleware(['authCustom'])->post('/update/profile/{user:id}',[\App\Http\Controllers\UserController::class,'update'])->name('updateProfile');
 Route::post('/resetPassword',[\App\Http\Controllers\UserController::class,'reset'])->name('reset.post');
+Route::middleware(['authCustom','admin'])->get('/blockUser/{user:id}',[\App\Http\Controllers\UserController::class,'blockUser'])->name('blockUserAdmin');
+Route::middleware(['authCustom','admin'])->get('/unblockUser/{user:id}',[\App\Http\Controllers\UserController::class,'unblockUser'])->name('unblockUserAdmin');
+
 //ApplicationController
 Route::middleware(['authCustom'])->get('/my-orders-customer',[\App\Http\Controllers\ApplicationController::class,'ordersCustomer'])->name('ordersCustomer');
 Route::middleware(['authCustom'])->get('/my-orders-executor',[\App\Http\Controllers\ApplicationController::class,'ordersExecutor'])->name('ordersExecutor');
@@ -65,6 +68,7 @@ Route::middleware(['authCustom'])->get('/respond/{task:id}',[\App\Http\Controlle
 Route::middleware(['authCustom'])->get('/respond/accept/{application:id}',[\App\Http\Controllers\ApplicationController::class,'respondAccept'])->name('respondAccept');
 Route::middleware(['authCustom'])->get('/respond/cancel/{id}',[\App\Http\Controllers\ApplicationController::class,'respondCancel'])->name('respondCancel');
 Route::middleware(['authCustom'])->get('/orders/finish/{application:id}',[\App\Http\Controllers\ApplicationController::class,'finishOrder'])->name('finishOrder');
+
 
 //FeedbackController
 

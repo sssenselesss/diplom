@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\User\PasswordMail;
+use App\Models\Complaint;
+use App\Models\Task;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -56,7 +58,27 @@ class UserController extends Controller
         Mail::to($request['email'])->send(new PasswordMail($password));
         $user->update(['password'=> Hash::make($password) ]);
         return back()->with(['success'=>'Пароль  отправлен на указанную почту']);
+    }
 
+    public function blockUser($id){
+
+        $user = User::query()->where('id','=',$id)->first();
+        if($user === null ) return back()->with(['alert'=>'Такого пользователя нет']);
+
+        $user->update(['status'=>'banned']);
+
+
+        return back()->with(['success'=>'Пользователь успешно заблокирован']);
+    }
+    public function unblockUser($id){
+
+        $user = User::query()->where('id','=',$id)->first();
+        if($user === null ) return back()->with(['alert'=>'Такого пользователя нет']);
+
+        $user->update(['status'=>'active']);
+
+
+        return back()->with(['success'=>'Пользователь успешно разблокирован']);
     }
 
 

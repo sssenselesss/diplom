@@ -219,6 +219,7 @@ $categories1 =[];
 
     public function allComplaints(){
         $comps = Complaint::query()->where('id','!=',null)->paginate(10)->withQueryString();
+
         return view('adminAllComplaints',['comps'=>$comps]);
     }
 

@@ -6,11 +6,11 @@
         <h2 class="h2-title mb60">Админ панель</h2>
         <div class="admin-wrapper">
             <div class="admin-select-bar">
-                <div class="select-item active"><a href="{{route('adminAllUsers')}}">Все пользователи</a> </div>
+                <div class="select-item active"><a href="{{route('adminAllUsers')}}">Все пользователи</a></div>
                 <div class="select-item"><a href="{{route('adminAllTasks')}}">Задания</a></div>
                 <div class="select-item "><a href="{{route('adminAllCategories')}}">Все категории</a></div>
 
-                <div class="select-item "><a href="{{route('adminAllComplaints')}}">Жалобы</a> </div>
+                <div class="select-item "><a href="{{route('adminAllComplaints')}}">Жалобы</a></div>
 
             </div>
 
@@ -29,23 +29,32 @@
             <div class="admin-users__container">
                 @foreach($users as $user)
                     <div class="user-item">
-                        <div class="user-image">
+                        <a href="{{route('profile',$user->id)}}" class="user-image">
                             @if($user->image === null)
                                 <img src="{{asset('public/assets/avatars/default.png')}}" alt="">
-                                @else
+                            @else
                                 <img src="{{$user->getImageUrlAttribute()}}" alt="Фото профиля">
 
                             @endif
-                        </div>
+                        </a>
 
                         <div class="user-info">
-                            <span class="user-name">{{$user->name}} ({{$user->id}})</span>
+                            <span class="user-name"> <a href="{{route('profile',$user->id)}}">{{$user->name}} ({{$user->id}})</a></span>
                             <span class="user-email">{{$user->email}}</span>
-                            <span class="user-status">Статус: @if($user->status ==='active')Активный @else Заблокирован@endif</span>
+                            <span class="user-status">Статус: @if($user->status ==='active')
+                                    Активный
+                                @else
+                                    Заблокирован
+                                @endif</span>
                             <span class="user-datereg">Зарегистрирован: {{$user->created_at}}</span>
                         </div>
 
-                        <div class="user-button">Заблокировать</div>
+                        @if($user->status ==='active')
+                            <a href="{{route('blockUserAdmin',$user->id)}}" class="user-button">Заблокировать</a>
+                        @else
+                            <a href="{{route('unblockUserAdmin',$user->id)}}" class="user-button">Разблокировать</a>
+
+                        @endif
                     </div>
                 @endforeach
 
