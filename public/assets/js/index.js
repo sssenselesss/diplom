@@ -9,7 +9,7 @@ const BurgerMenu = () => {
     burgerButton.addEventListener('click', () => {
         burgerMenu.classList.toggle('active');
     })
-    burgerMenu.addEventListener('click', (e)=>e.target === burgerMenu && close());
+    burgerMenu.addEventListener('click', (e) => e.target === burgerMenu && close());
 
 }
 
@@ -74,12 +74,12 @@ const modalOrder = () => {
     showModal.forEach((item) => {
 
 
-        item.addEventListener('click', ()=>{
+        item.addEventListener('click', () => {
             show()
-            taskId.setAttribute('value',item.parentNode.parentNode.parentNode.dataset.taskId)
-            executorId.setAttribute('value',item.parentNode.parentNode.parentNode.dataset.exeId)
-            customerId.setAttribute('value',item.parentNode.parentNode.parentNode.dataset.custId)
-            orderId.setAttribute('value',item.parentNode.parentNode.parentNode.dataset.orderId)
+            taskId.setAttribute('value', item.parentNode.parentNode.parentNode.dataset.taskId)
+            executorId.setAttribute('value', item.parentNode.parentNode.parentNode.dataset.exeId)
+            customerId.setAttribute('value', item.parentNode.parentNode.parentNode.dataset.custId)
+            orderId.setAttribute('value', item.parentNode.parentNode.parentNode.dataset.orderId)
 
         })
     })
@@ -87,8 +87,8 @@ const modalOrder = () => {
 
     closeModal.addEventListener('click', close)
 
-    window.addEventListener('load',()=>{
-        if(parent.querySelector('.danger-log')){
+    window.addEventListener('load', () => {
+        if (parent.querySelector('.danger-log')) {
             show();
         }
     })
@@ -113,9 +113,8 @@ const ModalCategory = () => {
 
     const close = () => burgerMenu.classList.remove('active');
     const show = () => burgerMenu.classList.add('active');
-    modalWindow.addEventListener('click', (e)=>e.target === modalWindow && close());
+    modalWindow.addEventListener('click', (e) => e.target === modalWindow && close());
     showCategory.addEventListener('click', show);
-
 
 
 }
@@ -139,7 +138,7 @@ const currentLengthDiscription = () => {
 
 
     const textArea = parent.querySelector('.addArticle__text');
-    if(!textArea) return false
+    if (!textArea) return false
 
     const currentLength = parent.querySelector('.currentLengt');
 
@@ -154,7 +153,7 @@ const currentLengthOther = () => {
     if (!parent) return false
 
     const textArea = parent.querySelector('.Othertext');
-    if(!textArea) return false
+    if (!textArea) return false
 
     const currentLength = parent.querySelector('.otherLength');
 
@@ -168,7 +167,7 @@ const currentLengthOther = () => {
 
 const modalLogin = () => {
     const modal = document.querySelector('.login-modal');
-    if(!modal) return false
+    if (!modal) return false
 
     const modalReg = document.querySelector('.registration-modal');
 
@@ -179,7 +178,7 @@ const modalLogin = () => {
 
     const closeModal = modal.querySelector('.modal-close');
 
-    showLogin.addEventListener('click',()=>{
+    showLogin.addEventListener('click', () => {
         show();
         modalReg.classList.remove('active')
     })
@@ -189,7 +188,7 @@ const modalLogin = () => {
 
     showModal.addEventListener('click', show);
     showModalBurger.addEventListener('click', show);
-    closeModal.addEventListener('click',close)
+    closeModal.addEventListener('click', close)
 
     document.addEventListener('keydown', (e) => {
         if (e.which === 27) {
@@ -199,8 +198,8 @@ const modalLogin = () => {
 
     modal.addEventListener('click', (e) => e.target === modal && close());
 
-    window.addEventListener('load',()=>{
-        if(modal.querySelector('.danger-log')){
+    window.addEventListener('load', () => {
+        if (modal.querySelector('.danger-log')) {
             show();
         }
     })
@@ -208,7 +207,7 @@ const modalLogin = () => {
 
 const modalRegistrtion = () => {
     const modal = document.querySelector('.registration-modal');
-    if(!modal) return false
+    if (!modal) return false
 
     const modalLogin = document.querySelector('.login-modal');
 
@@ -220,17 +219,17 @@ const modalRegistrtion = () => {
     const close = () => modal.classList.remove('active');
     const show = () => modal.classList.add('active');
 
-    showReg.addEventListener('click',()=>{
+    showReg.addEventListener('click', () => {
         show();
         modalLogin.classList.remove('active')
     });
-    showModalBurger.addEventListener('click',()=>{
+    showModalBurger.addEventListener('click', () => {
         show();
         modalLogin.classList.remove('active')
 
     })
 
-    closeModal.addEventListener('click',close)
+    closeModal.addEventListener('click', close)
 
     document.addEventListener('keydown', (e) => {
         if (e.which === 27) {
@@ -239,45 +238,45 @@ const modalRegistrtion = () => {
     })
     modal.addEventListener('click', (e) => e.target === modal && close());
 
-    window.addEventListener('load',()=>{
-        if(modal.querySelector('.danger')){
+    window.addEventListener('load', () => {
+        if (modal.querySelector('.danger')) {
             show();
         }
     })
 }
 
-const alertTimeout = () =>{
+const alertTimeout = () => {
     const alert = document.querySelector('.alert');
-    if(!alert) return false
-    setTimeout(function(){
+    if (!alert) return false
+    setTimeout(function () {
         document.getElementById('alert').style.display = 'none';
     }, 3000);
 
 }
 
-const successTimeout = () =>{
+const successTimeout = () => {
     const alert = document.querySelector('.success');
-    if(!alert) return false
-    setTimeout(function(){
+    if (!alert) return false
+    setTimeout(function () {
         document.getElementById('alert').style.display = 'none';
     }, 3000);
 
 }
 
-const modalAddCategory = () =>{
+const modalAddCategory = () => {
     const parent = document.querySelector('.allCategories')
-  if(!parent) return false
+    if (!parent) return false
 
     const modal = parent.querySelector('.addCategory-modal');
 
-  const showModal = parent.querySelector('.add-category__modal-open');
-const closeModal = modal.querySelector('.modal-close');
+    const showModal = parent.querySelector('.add-category__modal-open');
+    const closeModal = modal.querySelector('.modal-close');
     console.log(showModal)
     const close = () => modal.classList.remove('active');
     const show = () => modal.classList.add('active');
 
-    showModal.addEventListener('click',show);
-    closeModal.addEventListener('click',close);
+    showModal.addEventListener('click', show);
+    closeModal.addEventListener('click', close);
 
     document.addEventListener('keydown', (e) => {
         if (e.which === 27) {
@@ -286,27 +285,27 @@ const closeModal = modal.querySelector('.modal-close');
     })
     modal.addEventListener('click', (e) => e.target === modal && close());
 
-    window.addEventListener('load',()=>{
-        if(modal.querySelector('.danger')){
+    window.addEventListener('load', () => {
+        if (modal.querySelector('.danger')) {
             show();
         }
     })
 }
 
-const modal = () =>{
+const modal = () => {
 
     const modal = document.querySelector('.modal');
 
-    if(!modal) return false
+    if (!modal) return false
 
     const showModal = document.querySelector('.open_modal_comp');
     const closeModal = modal.querySelector('.modal-close');
 
-    const show = ()=>modal.classList.add('active');
-    const close = ()=>modal.classList.remove('active');
+    const show = () => modal.classList.add('active');
+    const close = () => modal.classList.remove('active');
 
     showModal.addEventListener('click', show);
-    closeModal.addEventListener('click',close);
+    closeModal.addEventListener('click', close);
 
     document.addEventListener('keydown', (e) => {
         if (e.which === 27) {
@@ -315,37 +314,47 @@ const modal = () =>{
     })
     modal.addEventListener('click', (e) => e.target === modal && close());
 
-    window.addEventListener('load',()=>{
-        if(modal.querySelector('.danger')){
+    window.addEventListener('load', () => {
+        if (modal.querySelector('.danger')) {
             show();
         }
     })
 }
 
-const categoryDropDown = () =>{
+const categoryDropDown = () => {
     const parent = document.querySelector('.catalog-categories');
-    if(!parent) return false
+    if (!parent) return false
 
     const mainCategories = parent.querySelectorAll('.main-category__arrow');
-    mainCategories.forEach((elem)=>{
-        const subCategories =  elem.querySelector('.sub-category__arrow');
+    mainCategories.forEach((elem) => {
+        const subCategories = elem.querySelector('.sub-category__arrow')
         const arrow = elem.querySelector('.arrow-angle');
 
-        arrow.addEventListener('click',()=>{
+
+        arrow.addEventListener('click', () => {
             elem.classList.toggle('active');
             subCategories.classList.toggle('active');
         })
 
     })
+
+    window.addEventListener('load', () => {
+        mainCategories.forEach((elem) => {
+            const subCategories = elem.querySelector('.sub-category__arrow')
+            const inputs = subCategories.querySelectorAll('.form-check-input');
+
+            inputs.forEach((inp)=>{
+                if(inp.hasAttribute('checked')){
+                    inp.parentNode.parentNode.parentNode.classList.add('active');
+                    inp.parentNode.parentNode.classList.add('active');
+                }
+
+            })
+        })
+    })
+
+
 }
-
-
-
-
-
-
-
-
 
 
 const init = () => {
