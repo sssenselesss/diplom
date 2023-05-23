@@ -25,7 +25,7 @@ class TaskController extends Controller
             'description' => 'required|max:300',
             'option' => 'max:300',
             'place' => 'required|max:255',
-            'price' => 'required|max:10|numeric',
+            'price' => 'required|max:1000000|numeric',
             'date_start' => 'required',
             'date_end' => 'required',
             'image' => 'required|mimes:png,jpeg,jpg'

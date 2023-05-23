@@ -24,7 +24,7 @@ class UserController extends Controller
             'email'=>'required',
             'phone_number'=>'required',
             'city'=>'required',
-            'experience'=>'nullable|min:20|max:255',
+            'experience'=>'nullable|min:20',
             'about'=>'nullable|min:50',
             'image'=>'mimes:png,jpg,jpeg'
         ]);
