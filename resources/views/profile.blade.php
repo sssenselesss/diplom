@@ -30,7 +30,7 @@
                         @endif
 
 
-                        <span class="profile-age">19 лет, {{$user->city}}</span>
+                        <span class="profile-age"> {{$user->city}}</span>
                     </div>
 
                     <div class="profile-rate-order">

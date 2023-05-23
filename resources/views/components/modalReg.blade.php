@@ -14,22 +14,22 @@
                 <h3 class="h3-login">Регистрация</h3>
                 <div class="login-field">
                     <label for="name">ФИО*</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name"  value="{{old('name')}}">
                 </div>
                 @error('name') <span class="danger" id="alert">{{$message}}</span> @enderror
                 <div class="login-field">
                     <label for="email_reg">Электронаня почта*</label>
-                    <input type="email" id="email" name="email_reg">
+                    <input type="email" id="email" name="email_reg"  value="{{old('email_reg')}}">
                 </div>
                 @error('email_reg') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">
                     <label for="phone_number">Номер телефона*</label>
-                    <input type="text" id="phone_number" name="phone_number">
+                    <input type="text" id="phone_number" name="phone_number"  value="{{old('phone_number')}}">
                 </div>
                 @error('phone_number') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">
                     <label for="city">Город*</label>
-                    <input type="text" id="city" name="city">
+                    <input type="text" id="city" name="city"  value="{{old('city')}}">
                 </div>
                 @error('city') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field file-attach file-attach__reg">
@@ -41,12 +41,12 @@
 
                 <div class="login-field">
                     <label for="password_reg">Пароль*</label>
-                    <input type="text" id="password" name="password_reg">
+                    <input type="password" id="password" name="password_reg" value="{{old('password_reg')}}">
                 </div>
                 @error('password_reg') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">
                     <label for="re_password">Повторите пароль*</label>
-                    <input type="text" id="re_password" name="re_password">
+                    <input type="password" id="re_password" name="re_password" value="{{old('re_password')}}">
                 </div>
                 @error('re_password') <span class="danger" id="alert">{{$message}}</span>@enderror
 

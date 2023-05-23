@@ -45,7 +45,7 @@
                 @error('place') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
                 <div class="field">
                     <label for="price">Бюджет</label>
-                    <input type="text" name="price" id="price" class="addArticle__input"  value="{{old('price')}}"/>
+                    <input type="number" name="price" id="price" class="addArticle__input"  value="{{old('price')}}"/>
                 </div>
                 @error('price') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 

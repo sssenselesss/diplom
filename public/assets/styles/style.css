@@ -2333,4 +2333,24 @@ body::-webkit-scrollbar-thumb {
 .open_modal_comp{
     cursor: pointer;
 }
+.main-category__arrow{
+    position: relative;
+    padding-left: 25px;
+}
+.arrow-angle{
+    position: absolute;
+    top: 0;
+   left: 0;
+}
+.sub-category__arrow{
+    display: none;
+}
+.sub-category__arrow.active{
+    display: block;
+}
+
+.main-category__arrow.active .fa-angle-down{
+    transform: rotate(180deg);
+}
+
 

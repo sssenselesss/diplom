@@ -41,7 +41,7 @@ const currentLengthFeedback = () => {
     const currentLength = parent.querySelector('.currentLengt');
 
 
-    textArea.addEventListener('keydown', (e) => {
+    textArea.addEventListener('input', (e) => {
         let a = e.currentTarget.value.length
         currentLength.textContent = a
 
@@ -123,7 +123,6 @@ const ModalCategory = () => {
 const attachFile = () => {
 
     const parent = document.querySelector('.attach')
-    console.log(parent)
     if (!parent) return false
 
     const attachDiv = document.querySelector('.file-attach');
@@ -144,7 +143,7 @@ const currentLengthDiscription = () => {
 
     const currentLength = parent.querySelector('.currentLengt');
 
-    textArea.addEventListener('keydown', (e) => {
+    textArea.addEventListener('input', (e) => {
         let a = e.currentTarget.value.length
         currentLength.textContent = a
 
@@ -160,7 +159,7 @@ const currentLengthOther = () => {
     const currentLength = parent.querySelector('.otherLength');
 
 
-    textArea.addEventListener('keydown', (e) => {
+    textArea.addEventListener('input', (e) => {
         let a = e.currentTarget.value.length
         currentLength.textContent = a
 
@@ -256,6 +255,15 @@ const alertTimeout = () =>{
 
 }
 
+const successTimeout = () =>{
+    const alert = document.querySelector('.success');
+    if(!alert) return false
+    setTimeout(function(){
+        document.getElementById('alert').style.display = 'none';
+    }, 3000);
+
+}
+
 const modalAddCategory = () =>{
     const parent = document.querySelector('.allCategories')
   if(!parent) return false
@@ -314,6 +322,23 @@ const modal = () =>{
     })
 }
 
+const categoryDropDown = () =>{
+    const parent = document.querySelector('.catalog-categories');
+    if(!parent) return false
+
+    const mainCategories = parent.querySelectorAll('.main-category__arrow');
+    mainCategories.forEach((elem)=>{
+        const subCategories =  elem.querySelector('.sub-category__arrow');
+        const arrow = elem.querySelector('.arrow-angle');
+
+        arrow.addEventListener('click',()=>{
+            elem.classList.toggle('active');
+            subCategories.classList.toggle('active');
+        })
+
+    })
+}
+
 
 
 
@@ -337,6 +362,8 @@ const init = () => {
     alertTimeout()
     modalAddCategory()
     modal()
+    successTimeout()
+    categoryDropDown()
 }
 
 document.addEventListener('DOMContentLoaded', init)

@@ -14,12 +14,12 @@
                 <h3 class="h3-login">Авторизация</h3>
                 <div class="login-field">
                     <label for="email">Электронная почта*</label>
-                    <input type="text" id="email" name="email">
+                    <input type="text" id="email" name="email" value="{{old('email')}}">
                 </div>
                 @error('email') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">
                     <label for="password">Пароль*</label>
-                    <input type="text" id="password" name="password">
+                    <input type="password" id="password" name="password" value="{{old('password')}}">
                 </div>
                 @error('password') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
                 <div class="required-input">*Обязатлеьное поле</div>
