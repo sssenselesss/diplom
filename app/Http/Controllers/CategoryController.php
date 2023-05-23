@@ -16,7 +16,7 @@ class CategoryController extends Controller
     public function create(Request $request){
         $validator = Validator::make($request->all(),[
             'main_category'=>'required',
-            'name'=>'required|max:30'
+            'name'=>'required|max:60'
         ]);
 
         if($validator->fails()){
