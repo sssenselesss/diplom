@@ -49,7 +49,7 @@
                             </div>
                             <div class="admin-order__name-rate">
                                 <a href="{{route('profile',$task->author_id)}}" class="admin-order__name">{{$task->author()->name}}</a>
-                                <div class="admin-order__rate">Отзвывы: 14 </div>
+                                <div class="admin-order__rate">Отзвывы: {{$task->author()->feedback($task->author_id)}} </div>
 
                             </div>
                         </div>

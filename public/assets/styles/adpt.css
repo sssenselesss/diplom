@@ -189,6 +189,11 @@
     .category-modal__button{
         display: flex;
     }
+    .admin-categories__container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
 
 @media(max-width:768px) {
@@ -251,7 +256,10 @@
         color: #9f9f9f;
     }
 
-
+.admin-orders{
+    display: flex;
+    flex-direction: column;
+}
     .admin-order__title-price{
 
         font-size: 16px;
@@ -318,6 +326,7 @@
     .banner-content h1 {
         font-size: 24px;
     }
+
 
     .banner-content p {
         font-size: 12px;
@@ -511,15 +520,40 @@
         font-size: 12px;
     }
     .search-div{
-        height: 40px;
+        height: 30px;
         font-size: 12px;
     }
+    .search-div input{
+     background: none;
+    }
     .search-btn{
-        height: 40px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .admin-select-bar{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .add-category__modal-open{
+        height: 30px;
+        width: 180px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .roleButton{
         text-align: center;
         font-size: 12px;
     }
+    .main-category h4{
+        font-size: 16px;
+    }
+    .sub-categories .category{
+        font-size: 12px;
+    }
+
 
 }
