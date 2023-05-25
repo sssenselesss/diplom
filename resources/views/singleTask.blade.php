@@ -68,7 +68,7 @@
                 <div class="single-text">
                     <div>
                         <b>Бюджет</b>
-                        <span> {{$task->money()}} ₽</span>
+                        <span> {{$task->money()}} </span>
                     </div>
                     <div>
                         <b>Нужно</b>
@@ -103,7 +103,7 @@
                     </div>
                     <div class="author-name__rate">
                         <span class="author-name">{{$task->author()->name}}</span>
-                        <span class="author-rate">Отзвывы: 14 </span>
+                        <span class="author-rate">Отзвывы: {{$task->author()->feedback($task->author_id)}} </span>
                     </div>
                 </a>
             </div>

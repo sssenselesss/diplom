@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\AuthCustomMiddleware;
 use App\Http\Middleware\UserCheckMiddleware;
+use App\Http\Middleware\UserStatus;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -68,6 +69,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin'=>AdminMiddleware::class,
         'userCheck'=>UserCheckMiddleware::class,
-        'authCustom'=>AuthCustomMiddleware::class
+        'authCustom'=>AuthCustomMiddleware::class,
+        'banned'=>UserStatus::class
     ];
 }

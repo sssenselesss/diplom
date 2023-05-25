@@ -49,9 +49,11 @@
 
                     @auth()
                         @if(\Illuminate\Support\Facades\Auth::user()->role ==='admin')
-                            <a class="">Админ панель</a>
+                            <a href="{{route('adminAllUsers')}}">Админ панель</a>
                         @endif
-                        <a class="">Профиль</a>
+
+                        <a href="{{route('ordersCustomer')}}">Заказы</a><br>
+                        <a href="{{route('profile',\Illuminate\Support\Facades\Auth::user()->id)}}">Профиль</a><br>
                         <a href="{{route('logout')}}" class="">Выйти</a>
                     @endauth
 

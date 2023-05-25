@@ -26,16 +26,18 @@
                     <textarea name="text" id="text" class="addArticle__text"></textarea>
                 </div>
                 @error('text') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
-                <div class="field mb60">
+                <div class="field ">
                     <label for="file">Изображение</label>
                     <div class="file-attach">
                         Выберите изображение
                         <input type="file" name="image" class="addArtilce__input">
                     </div>
-                </div>
-                @error('image') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 
-                <button class="button">Добавить</button>
+                </div>
+                @error('image') <span class="danger danger-log " id="alert">{{$message}}</span>@enderror
+
+
+                <button class="button mt60">Добавить</button>
 
             </form>
         </div>

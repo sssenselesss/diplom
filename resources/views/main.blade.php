@@ -58,7 +58,7 @@
                         @foreach($feedbacks as $fb)
                             <div class="swiper-slide">
                                 <div class="feed-title">{{$fb->task()->title}}</div>
-                                <div class="feed-price">Оплата: {{$fb->task()->money()}} </div>
+                                <div class="feed-price">Оплата: <b>{{$fb->task()->money()}}</b>  </div>
                                 <div class="feed-content">{{$fb->text}}</div>
                                 <div class="feed-date">{{ substr($fb->created_at,0,11)}}</div>
 
@@ -75,7 +75,7 @@
                                     <div class="feed-user__info">
                                         <span class="name-user">{{$fb->executor()->name}}</span>
 
-                                        <div class="rate">Рейтинг <i class="fa fa-star" aria-hidden="true"></i> {{   number_format($fb->average($fb->executor_id),1)     }}</div>
+                                        <div class="rate-main">Рейтинг <i class="fa fa-star" aria-hidden="true"></i> {{   number_format($fb->average($fb->executor_id),1)     }}</div>
                                         <div class="cancel-orders">Выполнил {{$fb->finished($fb->executor_id)}} заданий</div>
                                     </div>
                                 </div>
@@ -194,10 +194,10 @@
                 @foreach($articles as $article)
                     <div class="article">
                         <div class="article-image">
-                            <img src="{{$article->getImageUrlAttributeArticle()}}" alt="">
+                            <a href="{{route('singleArticle',$article->id)}}"><img src="{{$article->getImageUrlAttributeArticle()}}" alt=""></a>
                         </div>
                         <div class="article-date">{{$article->created_at}}</div>
-                        <div class="article-title">{{$article->title}}</div>
+                        <div class="article-title"><a href="{{route('singleArticle',$article->id)}}">{{$article->title}}</a> </div>
 
                     </div>
                 @endforeach

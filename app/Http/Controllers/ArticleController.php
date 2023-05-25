@@ -20,11 +20,10 @@ class ArticleController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return back()->withErrors($validator->errors())->withErrors($request->all());
+            return back()->withErrors($validator->errors())->withInput($request->all());
         }
 
 
-        $author = auth()->user()->id;
         $image = null;
 
         if ($request->file('image')) {

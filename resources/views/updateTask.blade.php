@@ -70,7 +70,7 @@
                     </div>
                 </div>
 
-                <button class="button">Добавить</button>
+                <button class="button">Сохранить</button>
 
             </form>
         </div>

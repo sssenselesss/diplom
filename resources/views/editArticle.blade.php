@@ -2,7 +2,7 @@
 @section('page_title','Редактировать статью')
 
 @section('content')
-    <div class="addArticle mt90">
+    <div class="addArticle attach mt90">
         <h2 class="h2-title mb60">Редактировать статью</h2>
         <div class="wrapper">
             <form action="{{route('editArticle.post',$article)}}" class="addArtcile-form" method="post"

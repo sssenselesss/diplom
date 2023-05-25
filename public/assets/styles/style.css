@@ -112,6 +112,7 @@ ul {
 }
 
 .burger-menu {
+    width: 260px;
     position: absolute;
     background-color: #62AE81;
     right: 16px;
@@ -269,6 +270,9 @@ ul {
 }
 
 .swiper-slide {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-around;
     background-position: center;
     background-size: cover;
     max-width: 600px !important;
@@ -276,6 +280,7 @@ ul {
     background-color: white;
     border-radius: 20px;
     padding: 20px 24px;
+
 }
 
 .swiper-pagination {
@@ -326,13 +331,11 @@ ul {
     flex-direction: column;
 }
 
-.rate {
-    margin-top: 20px;
-}
-
-.cancel-orders {
+.rate-main {
     margin-top: 5px;
 }
+
+
 
 /* Как это работает */
 
@@ -480,8 +483,34 @@ ul {
 
 footer {
     margin-top: 250px;
-    background-color: #dddddd;
-    height: 300px;
+    background-color: #313131;
+    height: 220px;
+    color: white;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+
+
+}
+.footer-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+}
+.footer-nav{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 16px;
+}
+.footer-icons{
+    display: flex;
+    gap: 16px;
+}
+.footer-logo{
+    font-size: 32px;
+    font-weight: 700;
 }
 
 /* Страница частых вопросов */
@@ -2352,5 +2381,11 @@ body::-webkit-scrollbar-thumb {
 .main-category__arrow.active .fa-angle-down{
     transform: rotate(180deg);
 }
+.single-article__title{
+    padding:  20px;
+    flex-wrap: wrap;
+    word-break: break-word;
+}
+
 
 

@@ -5,7 +5,7 @@
     <div class="singleArticle">
         <div class="singleArticle-image">
             <img src="{{$article->getImageUrlAttributeArticle()}}" alt="">
-            <div class="black">{{$article->title}}</div>
+            <div class="black single-article__title">{{$article->title}}</div>
         </div>
 
         <div class="singleArticle-content">

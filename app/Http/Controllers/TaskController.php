@@ -79,9 +79,8 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
 
-
         $validator = Validator::make($request->all(), [
-            'title' => 'required|min:10|max:30',
+            'title' => 'required|min:5|max:30',
             'category_id' => 'required',
             'description' => 'required|max:300',
             'option' => 'max:300',
@@ -113,8 +112,6 @@ class TaskController extends Controller
 
     public function destroy($id)
     {
-
-
         Task::destroy($id);
         $tasks = Task::all();
         return redirect()->route('catalog', ['tasks' => $tasks]);

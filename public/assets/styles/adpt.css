@@ -42,6 +42,18 @@
         justify-content: center;
 
     }
+    .header-nav {
+        display: none;
+    }
+
+    .header-buttons {
+        display: none;
+    }
+
+    .burger-block {
+        display:
+            block;
+    }
 }
 
 @media(max-width:1200px) {
@@ -81,6 +93,9 @@
     .how-image {
         max-width: 1920px;
         height: 950px;
+    }
+    .footer-nav{
+        display: none;
     }
 
     .how-content {
@@ -177,18 +192,7 @@
 }
 
 @media(max-width:768px) {
-    .header-nav {
-        display: none;
-    }
 
-    .header-buttons {
-        display: none;
-    }
-
-    .burger-block {
-        display:
-            block;
-    }
     .rightSide-image{
 
         display: none;
