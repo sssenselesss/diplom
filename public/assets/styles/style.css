@@ -599,6 +599,7 @@ footer {
 
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .time-category__item {
@@ -1080,6 +1081,7 @@ footer {
     margin-top: 60px;
     font-size: 24px;
     padding: 0px 16px;
+    overflow-wrap: break-word;
 }
 
 .singleArticle-__author_date_views {

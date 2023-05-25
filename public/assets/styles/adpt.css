@@ -554,6 +554,13 @@
     .sub-categories .category{
         font-size: 12px;
     }
+    .comp-btn{
+        height: 30px;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
 
 }
