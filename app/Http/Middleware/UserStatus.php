@@ -12,13 +12,14 @@ class UserStatus
     /**
      * Handle an incoming request.
      *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-
-        if(Auth::user()->status ==='banned'){
-            return redirect()->route('main')->with(['alert'=>'Вы были заблокированы за нарушение правил сайта']);
+        if (Auth::check()) {
+            if (Auth::user()->status === 'banned') {
+                return redirect()->route('main')->with(['alert' => 'Вы были заблокированы за нарушение правил сайта']);
+            }
         }
         return $next($request);
     }
