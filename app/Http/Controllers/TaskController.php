@@ -142,7 +142,7 @@ class TaskController extends Controller
         User::query()->where('id', '=', $user->id)->update(['role' => 'executor', 'experience' => $experience, 'about' => $about]);
 
 
-        return redirect()->route('main');
+        return redirect()->route('catalog');
 
 
     }

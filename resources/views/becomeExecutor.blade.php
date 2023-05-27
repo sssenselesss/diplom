@@ -11,13 +11,13 @@
 
                 <div class="field">
                     <label for="experience">Опыт работы</label>
-                    <textarea name="experience" id="experience" class="addArticle__text"></textarea>
+                    <textarea name="experience" id="experience" class="addArticle__text" placeholder="Не менее 10 символов"></textarea>
                 </div>
                 @error('experience') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 
                 <div class="field">
                     <label for="about">Расскажите о себе</label>
-                    <textarea name="about" id="about" class="addArticle__text"></textarea>
+                    <textarea name="about" id="about" class="addArticle__text" placeholder="Не менее 30 символов"></textarea>
                 </div>
                 @error('about') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 

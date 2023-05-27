@@ -43,7 +43,7 @@
                                     <div class="order-author__name_price">
                                         <a href="{{route('profile',$exe->executor_id)}}"
                                            class="order-author__name">{{$exe->executor()->name}}</a>
-                                        <span class="order-author__rate">Отзвывы: 14 </span>
+                                        <span class="order-author__rate">Отзвывы:  {{$exe->executor()->feedback($exe->executor_id)}}</span>
                                     </div>
                                 </div>
 
