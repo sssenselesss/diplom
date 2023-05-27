@@ -61,7 +61,7 @@
                 </div>
                 @error('date_end') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 
-                <div class="field mb60">
+                <div class="field ">
                     <label for="file">Изображение</label>
                     <div class="file-attach">
                         Выберите изображение
@@ -71,7 +71,7 @@
                 @error('image') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
 
 
-                <button class="button">Добавить</button>
+                <button class="button mt60">Добавить</button>
 
             </form>
         </div>
