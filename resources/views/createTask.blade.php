@@ -68,6 +68,8 @@
                         <input type="file" class="addArtilce__input" name="image">
                     </div>
                 </div>
+                @error('image') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
+
 
                 <button class="button">Добавить</button>
 
