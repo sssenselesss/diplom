@@ -5,10 +5,11 @@
     <div class="myOrders">
         <div class="wrapper">
             <div class="selectRole">
-                <a href="{{route('ordersExecutor')}}" class="roleButton active ">Я исполнитель</a>
+                <a href="{{route('ordersExecutor')}}" class="roleButton  ">Я исполнитель</a>
                 <a href="{{route('ordersCustomer')}}" class="roleButton ">Я заказчик</a>
                 <a href="{{route('ordersAll')}}" class="roleButton ">Созданные заказы</a>
-                <a href="{{route('respondOrders')}}" class="roleButton ">Откликнулись</a>
+                <a href="{{route('respondOrders')}}" class="roleButton active">Откликнулись</a>
+
 
             </div>
 
@@ -60,7 +61,7 @@
 
                     @endforeach
                 @else
-                    <div class="empty"> У вас нет созданных заданий</div>
+                    <div class="empty"> Пока никто не откликнулся</div>
                 @endif
 
 

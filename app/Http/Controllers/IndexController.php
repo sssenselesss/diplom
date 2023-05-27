@@ -29,7 +29,7 @@ class IndexController extends Controller
     public function catalog()
 
     {
-        $total = Task::all();
+        $total = Task::query()->where('status','new')->get();
 
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();
@@ -131,7 +131,7 @@ $categories1 =[];
 
 
          $feedbacks = Feedback::query()->where('executor_id','=',$user->id)
-             ->orWhere('customer_id','=',$user->id)->get();
+             ->get();
 
             $average = Feedback::query()->where('executor_id','=',$user->id)
                 ->orWhere('customer_id','=',$user->id)->average('rate');

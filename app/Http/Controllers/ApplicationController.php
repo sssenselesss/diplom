@@ -100,4 +100,11 @@ class ApplicationController extends Controller
 
         return view('myOrdersAll',['executors'=>$executors]);
     }
+
+    public function respondOrders(){
+        $orders = Application::query()->where('customer_id','=',Auth::user()->id)->
+            where('status','=','waiting')->get();
+
+        return view('myRespondOrders',['orders'=>$orders]);
+    }
 }

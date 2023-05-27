@@ -63,6 +63,7 @@ Route::middleware(['authCustom','admin','banned'])->get('/unblockUser/{user:id}'
 Route::middleware(['authCustom','banned'])->get('/my-orders-customer',[\App\Http\Controllers\ApplicationController::class,'ordersCustomer'])->name('ordersCustomer');
 Route::middleware(['authCustom','banned'])->get('/my-orders-executor',[\App\Http\Controllers\ApplicationController::class,'ordersExecutor'])->name('ordersExecutor');
 Route::middleware(['authCustom','banned'])->get('/my-orders-all',[\App\Http\Controllers\ApplicationController::class,'ordersAll'])->name('ordersAll');
+Route::middleware(['authCustom','banned'])->get('/my-respond-orders',[\App\Http\Controllers\ApplicationController::class,'respondOrders'])->name('respondOrders');
 Route::middleware('banned')->get('/respondUsers/{task:id}',[\App\Http\Controllers\ApplicationController::class,'respondUsers'])->name('respondUsers');
 Route::middleware(['authCustom','banned'])->get('/respond/{task:id}',[\App\Http\Controllers\ApplicationController::class,'respond'])->name('respond');
 Route::middleware(['authCustom','banned'])->get('/respond/accept/{application:id}',[\App\Http\Controllers\ApplicationController::class,'respondAccept'])->name('respondAccept');
