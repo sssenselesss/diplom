@@ -26,7 +26,7 @@
                             <div class="order-down">
                                 <div class="order-author">
                                     <div class="order-author__image">
-                                        @if($order->author()->image === null)
+                                        @if($order->customer()->image === null)
                                             <img src="{{asset('public/assets/avatars/default.png')}}" alt="123">
 @else
                                             <img src="{{$order->task()->author()->getImageUrlAttribute()}}" alt="123">
