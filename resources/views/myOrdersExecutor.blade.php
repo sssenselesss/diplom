@@ -35,7 +35,7 @@
                                     </div>
                                     <div class="order-author__name_price">
                                         <a href="{{route('profile',$order->customer_id)}}" class="order-author__name">{{$order->task()->author()->name}}</a>
-                                        <span class="order-author__rate">Отзвывы:{{$orders->customer()->feedback($order->customer_id)}} </span>
+                                        <span class="order-author__rate">Отзвывы:{{$order->customer()->feedback($order->customer_id)}} </span>
                                     </div>
                                 </div>
 
