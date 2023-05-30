@@ -80,7 +80,7 @@ class TaskController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            'title' => 'required|min:5|max:30',
+            'title' => 'required|min:5',
             'category_id' => 'required',
             'description' => 'required|max:300',
             'option' => 'max:300',
