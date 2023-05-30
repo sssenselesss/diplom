@@ -28,7 +28,7 @@ class TaskController extends Controller
             'price' => 'required|max:1000000|numeric',
             'date_start' => 'required',
             'date_end' => 'required',
-            'image' => 'required|mimes:png,jpeg,jpg'
+            'image' => 'mimes:png,jpeg,jpg'
         ]);
 
         if ($validator->fails()) {

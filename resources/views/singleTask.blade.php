@@ -60,10 +60,16 @@
 
 
             <div class="single-content">
-                <div class="single-image">
-                    <img src="{{$task->getImage()}}"
-                         alt="123">
-                </div>
+
+
+                    @if($task->image !== null)
+                    <div class="single-image">
+                        <img src="{{$task->getImage()}}"
+                             alt="123">
+                    </div>
+
+                @endif
+
 
                 <div class="single-text">
                     <div>
