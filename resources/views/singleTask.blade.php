@@ -11,7 +11,7 @@
 
             <h5 style="margin-bottom: 20px">Что именно вам кажется недопустимым в этом материале?</h5>
 
-            <form action="{{route('sendComplaint')}}" method="post"  >
+            <form action="{{route('sendComplaint')}}" method="post">
                 @csrf
                 <input type="hidden" name="user_id" value="{{$task->author_id}}">
                 <input type="hidden" name="task_id" value="{{$task->id}}">
@@ -62,7 +62,7 @@
             <div class="single-content">
 
 
-                    @if($task->image !== null)
+                @if($task->image !== null)
                     <div class="single-image">
                         <img src="{{$task->getImage()}}"
                              alt="123">
@@ -102,7 +102,7 @@
                     <div class="author-image">
                         @if($task->author()->image === null)
                             <img src="{{asset('public/assets/avatars/default.png')}}" alt="Фото проифиля">
-                            @else
+                        @else
                             <img src="{{$task->author()->getImageUrlAttribute()}}" alt="Фото профиля">
 
                         @endif
@@ -127,16 +127,17 @@
 
             @auth()
                 <div class="single-btns">
-                    @if(auth()->user()->role !== 'executor' and auth()->user()->role != 'admin')
-                        <a href="{{route('becomeExecutor')}}" class="single-button">Откликнутся</a>
-                    @else
+                    @if($task->author_id !== auth()->user()->id)
+                        @if(auth()->user()->role !== 'executor' and auth()->user()->role != 'admin')
+                            <a href="{{route('becomeExecutor')}}" class="single-button">Откликнутся</a>
+                        @else
+                        @endif
 
                         @if($task->author_id !== auth()->user()->id)
                             @if($task_app ===null)
                                 <a href="{{route('respond',$task)}}" class="single-button">Откликнутся</a>
 
                             @endif
-
                         @endif
 
                     @endif
