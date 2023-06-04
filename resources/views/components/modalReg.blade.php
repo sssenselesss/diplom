@@ -19,7 +19,7 @@
                 @error('name') <span class="danger" id="alert">{{$message}}</span> @enderror
                 <div class="login-field">
                     <label for="email_reg">Электронаня почта*</label>
-                    <input type="email" id="email" name="email_reg"  value="{{old('email_reg')}}">
+                    <input type="email" id="email_reg" name="email_reg"  value="{{old('email_reg')}}">
                 </div>
                 @error('email_reg') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">
@@ -41,7 +41,7 @@
 
                 <div class="login-field">
                     <label for="password_reg">Пароль*</label>
-                    <input type="password" id="password" name="password_reg" value="{{old('password_reg')}}">
+                    <input type="password" id="password_reg" name="password_reg" value="{{old('password_reg')}}">
                 </div>
                 @error('password_reg') <span class="danger" id="alert">{{$message}}</span>@enderror
                 <div class="login-field">

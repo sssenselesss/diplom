@@ -80,16 +80,10 @@
                                     </div>
                                 </div>
                             </div>
-
                         @endforeach
                         @else
                         <div class="null">Пока нет отзывов</div>
                         @endif
-
-
-
-
-
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -101,9 +95,7 @@
         <div class="wrapper">
             <div class="how-image">
                 <img src="{{asset('public/assets/staticImages/howItWorks.png')}}" alt="">
-
             </div>
-
             <div class="how-content">
                 <div class="for_customer">
                     <span class="content-title">Для заказчика</span>
@@ -114,33 +106,26 @@
                             </div>
                             <div class="innerText">Зарегистрируйтесь</div>
                         </div>
-
                         <div class="how-item">
                             <div class="how-circle">
                                 <div class="inner-circle">2</div>
                             </div>
                             <div class="innerText">Создайте заявку</div>
                         </div>
-
                         <div class="how-item">
                             <div class="how-circle">
                                 <div class="inner-circle">3</div>
                             </div>
                             <div class="innerText">Выберите исполнителя</div>
                         </div>
-
                         <div class="how-item">
                             <div class="how-circle">
                                 <div class="inner-circle">4</div>
                             </div>
                             <div class="innerText">Оставьте отзыв</div>
                         </div>
-
-
-
                     </div>
                 </div>
-
                 <div class="for_customer">
                     <span class="content-title">Для исполнителя</span>
                     <div class="how-items">
@@ -182,7 +167,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -203,18 +187,8 @@
                 @endforeach
             @else
                 <div class="null">      Пока нет статей</div>
-
-                @endif
-
-
-
-
-
         </div>
-
         <div class="other-button">
                 <a href="{{route('articles')}}">  Посмотреть все статьи</a></div>
-
-
     </div>
 @endsection

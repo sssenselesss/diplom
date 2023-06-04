@@ -573,9 +573,7 @@ footer {
     display: flex;
 }
 
-.arrow.active .fa-angle-down {
-    rotate: 180deg;
-}
+
 
 
 /* SINGLE PAGE */
