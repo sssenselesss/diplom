@@ -187,8 +187,10 @@
                 @endforeach
             @else
                 <div class="null">      Пока нет статей</div>
+            @endif
         </div>
         <div class="other-button">
                 <a href="{{route('articles')}}">  Посмотреть все статьи</a></div>
     </div>
+
 @endsection
