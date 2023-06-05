@@ -102,6 +102,7 @@
 
             <form action="{{route('createFeedback')}}" method="post" class="modal-order__form">
                 @csrf
+
                 <div class="form__item">
                     <div class="simple-rating">
                         <div class="simple-rating__items">

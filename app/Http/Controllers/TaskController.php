@@ -44,7 +44,7 @@ class TaskController extends Controller
 
         Task::query()->create(['image' => $image, 'author_id' => $author] + $validator->validated());
 
-        return redirect()->route('catalog');
+        return redirect()->route('catalog')->with(['success'=>'Задание успешно создано']);
     }
 
     public function singleTask($id)
@@ -141,9 +141,7 @@ class TaskController extends Controller
 
         User::query()->where('id', '=', $user->id)->update(['role' => 'executor', 'experience' => $experience, 'about' => $about]);
 
-
         return redirect()->route('catalog');
-
 
     }
 }

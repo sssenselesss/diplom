@@ -131,18 +131,15 @@
                         @if(auth()->user()->role !== 'executor' and auth()->user()->role != 'admin')
                             <a href="{{route('becomeExecutor')}}" class="single-button">Откликнутся</a>
                         @else
-                        @endif
-
-                        @if($task->author_id !== auth()->user()->id)
                             @if($task_app ===null)
                                 <a href="{{route('respond',$task)}}" class="single-button">Откликнутся</a>
 
                             @endif
                         @endif
 
+                      
+
                     @endif
-
-
 
                     @if(auth()->user()->id === $task->author_id or auth()->user()->role ==='admin')
                         <a href="{{route('updateTask',$task->id)}}" class="single-button">Редактировать</a>

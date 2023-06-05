@@ -33,7 +33,8 @@ class AuthController extends Controller
             $image = $request->file('image')->store('public/assets/avatars');
         }
 
-        $user = User::query()->create(['email'=>$request['email_reg'],'image' => $image, 'password' => Hash::make($request['password_reg'])] + $validator->validated());
+        $user = User::query()->create(['email'=>$request['email_reg'],'image'
+            => $image, 'password' => Hash::make($request['password_reg'])] + $validator->validated());
 
         Auth::login($user);
 
@@ -57,7 +58,6 @@ class AuthController extends Controller
         }
 
         return redirect()->route('main');
-
     }
 
 

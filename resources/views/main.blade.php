@@ -189,7 +189,7 @@
                 <div class="null">      Пока нет статей</div>
             @endif
         </div>
-        <div class="other-button">
+        <div class="other-button button">
                 <a href="{{route('articles')}}">  Посмотреть все статьи</a></div>
     </div>
 
