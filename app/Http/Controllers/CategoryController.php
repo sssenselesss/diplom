@@ -26,6 +26,5 @@ class CategoryController extends Controller
         TaskCategory::query()->create($validator->validated());
 
         return back()->with(['success'=>'Категория успешно добавлена']);
-
     }
 }

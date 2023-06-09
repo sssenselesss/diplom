@@ -78,7 +78,6 @@ class TaskController extends Controller
 
     public function update(Request $request, Task $task)
     {
-
         $validator = Validator::make($request->all(), [
             'title' => 'required|min:5',
             'category_id' => 'required',
@@ -90,7 +89,6 @@ class TaskController extends Controller
             'date_end' => 'required',
             'image' => 'mimes:png,jpeg,jpg'
         ]);
-
 
         if ($validator->fails()) {
             return back()->withErrors($validator->errors())->withInput($request->all());
@@ -104,10 +102,8 @@ class TaskController extends Controller
             $image = $request->file('image')->store('public/assets/taskImages');
             $validated['image'] = $image;
         }
-
         $task->update($validated);
-
-        return redirect()->route('singleTask', $task->id);
+        return redirect()->route('singleTask', $task->id)->with(['success'=>'Изменения сохранены']);
     }
 
     public function destroy($id)

@@ -6,8 +6,8 @@
         <div class="wrapper">
             <div class="selectRole">
                 <a href="{{route('ordersExecutor')}}" class="roleButton ">Я исполнитель</a>
-                <a href="{{route('ordersCustomer')}}" class="roleButton active">Я заказчик</a>
-                <a href="{{route('ordersAll')}}" class="roleButton ">Созданные заказы</a>
+                <a href="{{route('ordersCustomer')}}" class="roleButton ">Я заказчик</a>
+                <a href="{{route('ordersAll')}}" class="roleButtonactive ">Созданные заказы</a>
                 <a href="{{route('respondOrders')}}" class="roleButton ">Откликнулись</a>
 
             </div>

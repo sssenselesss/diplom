@@ -32,7 +32,7 @@
                     <label for="description">Подробное описание заявки* ( <span class="currentLengt">0</span>/300) </label>
                     <textarea name="description" id="description" class="addArticle__text" maxlength="300">{{old('description')}}</textarea>
                 </div>
-                @error('text') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
+                @error('description') <span class="danger danger-log" id="alert">{{$message}}</span>@enderror
                 <div class="field">
                     <label for="option">Дополнительно ( <span class="currentLengt otherLength">0</span>/300)</label>
                     <textarea name="option" id="option" class="addArticle__text Othertext">{{old('option')}}</textarea>

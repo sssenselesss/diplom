@@ -11,7 +11,6 @@ class ArticleController extends Controller
     //
     public function articleCreate(Request $request)
     {
-
         $validator = Validator::make($request->all(), [
             'title' => 'required|min:6',
             'category_id' => 'required',
@@ -23,16 +22,13 @@ class ArticleController extends Controller
             return back()->withErrors($validator->errors())->withInput($request->all());
         }
 
-
         $image = null;
 
         if ($request->file('image')) {
             $image = $request->file('image')->store('public/assets/articleImage');
         }
-
         Article::query()->create(['image' => $image] + $validator->validated());
-
-        return redirect()->route('main');
+        return redirect()->route('main')->with(['success'=>'Статья успешно добавлена']);
     }
 
     public function show($id)
@@ -52,7 +48,7 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         Article::destroy($id);
-        return redirect()->route('articles');
+        return redirect()->route('articles')->with(['success'=>'Статья успешно удалена']);
 
     }
 

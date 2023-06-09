@@ -66,10 +66,9 @@ class UserController extends Controller
         if($user === null ) return back()->with(['alert'=>'Такого пользователя нет']);
 
         $user->update(['status'=>'banned']);
-
-
         return back()->with(['success'=>'Пользователь успешно заблокирован']);
     }
+
     public function unblockUser($id){
 
         $user = User::query()->where('id','=',$id)->first();
