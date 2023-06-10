@@ -42,6 +42,8 @@ a {
 
 a:hover {
     color: inherit;
+
+
 }
 
 ul {
@@ -816,6 +818,7 @@ footer {
 .order-price {
     width: 80px;
     margin-left: 10px;
+    font-size: 16px;
 }
 
 .order-address {
@@ -1380,9 +1383,16 @@ footer {
     font-weight: 500;
     padding: 5px;
 }
+.select-item:hover{
+
+    border-bottom: 2px solid #62AE81;
+}
 
 .select-item.active {
     border-bottom: 2px solid #62AE81;
+}
+.header-nav li:hover{
+    border-bottom: 1px solid #62AE81;
 }
 
 .admin-search {
