@@ -54,7 +54,7 @@ class AuthController extends Controller
         }
 
         if (!Auth::attempt($validator->validated())) {
-            return back()->withErrors(['invalid' => 'Неверные данные'])->withInput($request->all());
+            return back()->withErrors(['invalid' => 'Неверные данные'])->withInput($request->all())->with(['alert'=>'Неверный email или пароль']);
         }
 
         return redirect()->route('main');
