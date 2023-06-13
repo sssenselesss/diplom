@@ -37,8 +37,7 @@ class User extends Authenticatable
     }
 
     public function feedback($id){
-        return count(Feedback::query()->where('executor_id',$id)
-            ->orWhere('customer_id',$id)->get());
+        return count(Feedback::query()->where('executor_id',$id)->get());
     }
 
 
