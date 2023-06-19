@@ -11,7 +11,7 @@
 
                     <div class="respond-user">
                         {{--                {{route('profile',$task->author_id)}}--}}
-                        <a href="" class="respond-upper">
+                        <a href="{{route('profile',$user->executor()->id)}}" class="respond-upper">
                             <div class="respond-image">
                                 @if($user->executor()->image === null)
                                     <img src="{{asset('public/assets/avatars/default.png')}}" alt="123">
