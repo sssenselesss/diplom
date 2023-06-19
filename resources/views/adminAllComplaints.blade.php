@@ -5,7 +5,7 @@
     <div class="admin mt90 allCategories">
         <h2 class="h2-title mb60">Админ панель</h2>
         <div class="admin-wrapper">
-            <div class="admin-select-bar">
+            <div class="admin-select-bar ">
                 <div class="select-item "><a href="{{route('adminAllUsers')}}">Все пользователи</a></div>
                 <div class="select-item"><a href="{{route('adminAllTasks')}}">Задания</a></div>
                 <div class="select-item "><a href="{{route('adminAllCategories')}}">Все категории</a></div>
@@ -16,7 +16,7 @@
 
 
 
-            <div class="admin-users__container">
+            <div class="admin-users__container mt30">
 
                 @if(count($comps) === 0 )
                     <span class="null"> Жалоб пока нет</span>
