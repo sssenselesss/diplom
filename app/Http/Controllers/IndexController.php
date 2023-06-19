@@ -44,8 +44,8 @@ class IndexController extends Controller
     public function catalogSearch(Request $request)
     {
 
-        $tasks = Task::query()->where('id', '!=', null);
-        $total = Task::all();
+        $tasks = Task::query()->where('id', '!=', null)->where('status','new');
+
 
         if ($request->has('search')) {
             if ($request['search'] === null) {
@@ -54,22 +54,23 @@ class IndexController extends Controller
 
             }else{
                 $search = $request['search'];
-                $tasks =  Task::query()->where('title', 'LIKE', "%${search}%");
+                $tasks =  Task::query()->where('title', 'LIKE', "%${search}%")->where('status','new');
+
+
             }
         }
-$categories1 =[];
+        $total = $tasks->get();
+        $categories1 =[];
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();
-
         return view('catalog', ['tasks' => $tasks->paginate(10)->withQueryString(), 'mainCat' => $mainCat,
             'subCat' => $subCat,'total'=>$total,'categories1'=>$categories1]);
     }
-
     public function catalogFilter(Request $request){
 
-        $tasks = Task::query()->where('id', '!=', null);
-        $total = Task::all();
+        $tasks = Task::query()->where('id', '!=', null)->where('status','new');
 
+        $categories = [];
         if ($request->has('categories')) {
             if ($request['categories'] === null) {
 
@@ -77,10 +78,11 @@ $categories1 =[];
 
             }else{
                 $categories = $request->get('categories');
-                $tasks = Task::query()->whereIn('category_id',$categories);
+                $tasks = Task::query()->whereIn('category_id',$categories)->where('status','new');
 
             }
         }
+        $total = $tasks->get();
         $categories1 = $categories;
         $mainCat = MainTaskCategory::all();
         $subCat = TaskCategory::all();

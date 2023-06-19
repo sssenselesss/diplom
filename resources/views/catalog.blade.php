@@ -22,42 +22,47 @@
                 <div class="burger"><i class="fa fa-navicon" aria-hidden="true"></i></div>
                 Категории
             </div>
+            @if(count($tasks)=== 0 )
+                <span class="null">По вашему запросу ничего не найдено</span>
 
-            @foreach($tasks as $task)
-                <div class="order">
-                    <a href="{{route('singleTask',$task->id)}}" class="title-price">
-                        <span class="order-title">{{$task->title}}</span>
-                        <span class="order-price">{{$task->price}} ₽</span>
-                    </a>
-
-                    <div class="order-address">{{$task->place}}</div>
-
-                    <div class="order-line"></div>
-
-                    <div class="order-down">
-                        <a href="{{route('profile',$task->author_id)}} "
-                           class="order-author">
-                            <div class="order-author__image">
-                                @if($task->author()->image === null)
-                                    <img src="{{asset('public/assets/avatars/default.png')}}" alt="Фото профиля">
-                                @else
-                                    <img src="{{$task->author()->getImageUrlAttribute()}}"
-                                         alt="Фото профиля">
-                                @endif
-
-                            </div>
-                            <div class="order-author__name_price">
-
-                                <span class="order-author__name">{{$task->author()->name}}</span>
-                                <span
-                                    class="order-author__rate">Отзвывы: {{$task->author()->feedback($task->author()->id)}} </span>
-                            </div>
+            @else
+                @foreach($tasks as $task)
+                    <div class="order">
+                        <a href="{{route('singleTask',$task->id)}}" class="title-price">
+                            <span class="order-title">{{$task->title}}</span>
+                            <span class="order-price">{{$task->price}} ₽</span>
                         </a>
 
+                        <div class="order-address">{{$task->place}}</div>
 
+                        <div class="order-line"></div>
+
+                        <div class="order-down">
+                            <a href="{{route('profile',$task->author_id)}} "
+                               class="order-author">
+                                <div class="order-author__image">
+                                    @if($task->author()->image === null)
+                                        <img src="{{asset('public/assets/avatars/default.png')}}" alt="Фото профиля">
+                                    @else
+                                        <img src="{{$task->author()->getImageUrlAttribute()}}"
+                                             alt="Фото профиля">
+                                    @endif
+
+                                </div>
+                                <div class="order-author__name_price">
+
+                                    <span class="order-author__name">{{$task->author()->name}}</span>
+                                    <span
+                                        class="order-author__rate">Отзвывы: {{$task->author()->feedback($task->author()->id)}} </span>
+                                </div>
+                            </a>
+
+
+                        </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+
+            @endif
 
 
         </div>
