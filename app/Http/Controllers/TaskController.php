@@ -64,7 +64,7 @@ class TaskController extends Controller
                 ->where('status','=','waiting')->get();
 
             $executor = Application::query()->where('task_id','=',$id)
-                ->where('executor_id','=',Auth::user()->id)->first();
+                ->where('executor_id','=',Auth::user()->id)->where('status','!=','waiting')->first();
         }
 
 
