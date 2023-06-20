@@ -37,7 +37,7 @@
                                             <img src="{{asset('public/assets/avatars/default.png')}}" alt="">
 
                                         @else
-                                            <img src="{{$exe->task()->getImage()}}" alt="">
+                                            <img src="{{$exe->getImage()}}" alt="{{$exe->name}}">
 
                                         @endif
                                     </div>

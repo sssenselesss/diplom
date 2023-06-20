@@ -163,8 +163,6 @@ class IndexController extends Controller
 
     public  function adminAllTasks(Request $request){
 
-
-
         if($request->has('search')){
             $search = $request['search'];
 
